@@ -20,12 +20,14 @@ body {
     padding: 10px 30px;
     border-radius: 15px;
     background-color: white;
+    color: rgb(165, 165, 165);
 }
 
 #container {
     display: flex;
     flex-direction: column;
-    width: 960px;
+    flex: 1 0 auto;
     border-style: solid;
     border-color: black;
+    width: 960px;
 }

@@ -30,11 +30,20 @@
                     squareDiv.setAttribute("style", "flex-grow: 1; aspect-ratio: 1 / 1; flex-growth: 1;");
                     rowContainer.appendChild(squareDiv);
                     squareDiv.addEventListener("mouseover", (event) => {
-                        squareDiv.style.backgroundColor = "green";
+                        squareDiv.style.backgroundColor = generateRGB();
+                        if(squareDiv.style.opacity != 1) {
+                            squareDiv.style.opacity = Number(squareDiv.style.opacity) + .1;
+                        }
                     });
                 }
                 container.appendChild(rowContainer);
             }
+        }
+
+        function generateRGB() {
+            const rgbValues = 255;
+            const value = "rgb(" + Math.round(Math.random() * 255) + ',' + Math.round(Math.random() * 255) + "," + Math.round(Math.random() * 255) +")"
+            return value;
         }
 
         const button = document.querySelector("#settings button");
