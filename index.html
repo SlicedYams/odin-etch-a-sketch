@@ -20,8 +20,9 @@
         generateGrid(10);
 
         function generateGrid(num) {
+            const container = document.querySelector("#container");
+            container.innerHTML = "";
             for(let i = 0; i < num; i++) {
-                const container = document.querySelector("#container");
                 const rowContainer = document.createElement("div");
                 rowContainer.setAttribute("style", "display:flex;");
                 for(let x = 0; x < num; x++) {
@@ -35,6 +36,17 @@
                 container.appendChild(rowContainer);
             }
         }
+
+        const button = document.querySelector("#settings button");
+        button.addEventListener("click", (event) => {
+            while(true) {
+                let value = prompt("Enter an integer (1-100) to set the number of squares for the width and height.");
+                if(value > 0 && value <= 100) {
+                    generateGrid(value);
+                    break;
+                }
+            }
+        });
     </script>
 </body>
 </html>

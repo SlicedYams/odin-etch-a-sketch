@@ -29,3 +29,11 @@ generateGrid(num):
             create a square div
             append it to the inner container
         append the inner-row-container to the main container
+
+-add a click event to the configure button at the top that prompts the user 
+ for a number that sets the number of squares on the width and height
+
+button.addEventListener("click", (event) => {
+    loop until the value is between 1 - 100;
+    prompt("Enter an integer to set the number of squares on the width and height");
+})
