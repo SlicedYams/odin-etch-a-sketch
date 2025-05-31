@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="content-wrapper">
+        <div id="settings">
+            <button>Configure</button>
+        </div>
+        <div id="container">
+        </div>
+    </div>
+    <script>
+
+        //load page with default 16 x 16 grid
+        generateGrid(10);
+
+        function generateGrid(num) {
+            for(let i = 0; i < num; i++) {
+                const container = document.querySelector("#container");
+                const rowContainer = document.createElement("div");
+                rowContainer.setAttribute("style", "display:flex;");
+                for(let x = 0; x < num; x++) {
+                    const squareDiv = document.createElement("div");
+                    squareDiv.setAttribute("style", "flex-grow: 1; aspect-ratio: 1 / 1; flex-growth: 1;");
+                    rowContainer.appendChild(squareDiv);
+                    squareDiv.addEventListener("mouseover", (event) => {
+                        squareDiv.style.backgroundColor = "green";
+                    });
+                }
+                container.appendChild(rowContainer);
+            }
+        }
+    </script>
+</body>
+</html>
